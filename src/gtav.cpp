@@ -357,6 +357,9 @@ void Gtav::get_position(FLOAT *position)
  */
 void Gtav::teleport(FLOAT *position)
 {
+    if(position[0]>6399.F){
+        return;
+    }
     ADDR pedVisualXArray[] = {WorldPTR, oPed, oPedVisualX};
     ADDR pedNavigationPositionXArray[] = {WorldPTR, oPed, oPedNavigation, oPedNavigationPositionX};
     ADDR pedVehicleVisualXArray[] = {WorldPTR, oPed, oPedVehicle, oPedVehicleVisualX};
@@ -402,8 +405,8 @@ void Gtav::teleport_to_waypoint()
  */
 void Gtav::teleport_to_objective()
 {
-    FLOAT position[3] = {0};
-    for (int i = 2000; i > 0; i--)
+    FLOAT position[3] = {6400.F};
+    for (int i = 1; i <= 2000; i++)
     {
         ADDR addr = read_ulonglong(BlipPTR + i * 8);
         if (!check_valid(addr))
@@ -412,14 +415,7 @@ void Gtav::teleport_to_objective()
         }
         ADDR buf0 = read_int(addr + 0x40);
         ADDR buf1 = read_int(addr + 0x48);
-        if ((buf0 == 432 || buf0 == 443) && (buf1 == 59))
-        {
-            read_bytes(addr + 0x10, position, 12);
-            position[2] += 1.F;
-            teleport(position);
-            return;
-        }
-        else if (buf0 == 1 && (buf1 == 5 || buf1 == 60 || buf1 == 66))
+        if (buf0 == 1 && (buf1 == 5 || buf1 == 60 || buf1 == 66))
         {
             read_bytes(addr + 0x10, position, 12);
             position[2] += 1.F;
@@ -427,6 +423,13 @@ void Gtav::teleport_to_objective()
             return;
         }
         else if ((buf0 == 1 || buf0 == 225 || buf0 == 427 || buf0 == 478 || buf0 == 501 || buf0 == 523 || buf0 == 556) && (buf1 == 1 || buf1 == 2 || buf1 == 3 || buf1 == 54 || buf1 == 78))
+        {
+            read_bytes(addr + 0x10, position, 12);
+            position[2] += 1.F;
+            teleport(position);
+            return;
+        }
+        else if ((buf0 == 432 || buf0 == 443) && (buf1 == 59))
         {
             read_bytes(addr + 0x10, position, 12);
             position[2] += 1.F;
