@@ -1,0 +1,46 @@
+;.def
+;author: ssyatelandisi
+LIBRARY gtaLib
+DESCRIPTION "GTAOL辅助链接库" 
+EXPORTS
+get_maxArmor
+antiAFK
+get_pid
+get_maxHealth
+joaat
+keyboard_watch
+read_localAddress
+change_session
+destroy_enemy_vehicles
+dll_inject
+fill_current_ammo
+get_position
+gtav_init
+keydown
+keyup
+kill_enemy_npc
+kill_process
+move_forward
+read_cut
+repairing_vehicle
+set_armor
+set_copLevel
+set_godMode
+set_health
+set_infiniteAmmo
+set_luckyWheel
+set_seatbelt
+set_vehicleAbility
+set_vehicleGodMode
+set_weaponAmmoType
+set_weather
+spawn_vehicle
+stat_write
+suspend_process
+teleport_enemy_npc
+teleport_to_objective
+teleport_to_waypoint
+teleport
+write_cut
+write_localAddressFloat
+write_localAddressInt
