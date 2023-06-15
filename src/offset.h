@@ -29,7 +29,7 @@
 #define oPedInventoryInfiniteAmmo 0x78
 
 #define oPedPlayerInfo 0x10A8
-#define oPedPlayerInfoCopLevel 0x8E8
+#define oPedPlayerInfoCopLevel 0x8D8
 
 #define oPedArmor 0x150C
 #define oPedGodMode 0x189
