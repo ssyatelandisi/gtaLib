@@ -2,8 +2,8 @@
 #include <windows.h>
 
 VS_VERSION_INFO VERSIONINFO
-	FILEVERSION 1,0,0,3
-	PRODUCTVERSION 1,0,0,3
+	FILEVERSION 1,0,0,4
+	PRODUCTVERSION 1,0,0,4
 	FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
 	FILEFLAGS VS_FF_DEBUG
@@ -20,11 +20,11 @@ VS_VERSION_INFO VERSIONINFO
 			BEGIN
 				VALUE "CompanyName", "ssyatelandisi\0"
 				VALUE "FileDescription", "GTAOL辅助动态库\0"
-				VALUE "FileVersion", "1.0.0.3\0"
+				VALUE "FileVersion", "1.0.0.4\0"
 				VALUE "LegalCopyright", "©2018-2023 ssyatelandisi\0"
 				VALUE "OriginalFilename", "gtaLib.dll\0"
 				VALUE "ProductName", "gtaLib\0"
-				VALUE "ProductVersion", "1.0.0.3\0"
+				VALUE "ProductVersion", "1.0.0.4\0"
 			END
 		END
 		BLOCK "VarFileInfo"

@@ -38,8 +38,8 @@ add_library(${PROJECT_NAME} SHARED ${SOURCE} ${RC_FILE})
 # add_executable(main ${SOURCE} ${RC_FILE})
 add_custom_command(TARGET gtaLib
 POST_BUILD
-COMMAND ${CMAKE_COMMAND} -E rename ${PROJECT_BINARY_DIR}/lib/libgtaLib.dll ${PROJECT_BINARY_DIR}/lib/gtaLib.dll
-COMMAND ${CMAKE_COMMAND} -E rename ${PROJECT_BINARY_DIR}/lib/libgtaLib.dll.a ${PROJECT_BINARY_DIR}/lib/libgtaLib.a
-COMMENT "rename finished"
-VERBATIM
+    COMMAND ${CMAKE_COMMAND} -E rename ${PROJECT_BINARY_DIR}/lib/libgtaLib.dll ${PROJECT_BINARY_DIR}/lib/gtaLib.dll
+    COMMAND ${CMAKE_COMMAND} -E rename ${PROJECT_BINARY_DIR}/lib/libgtaLib.dll.a ${PROJECT_BINARY_DIR}/lib/libgtaLib.a
+    COMMENT "rename finished"
+    VERBATIM
 )
